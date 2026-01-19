@@ -22,7 +22,7 @@ Il s’agit d’un lanceur de dés virtuel permettant de choisir le nombre de fa
 - `script.js` : logique JavaScript
 
 ## 🌍 Démo en ligne
-👉 *(lien GitHub Pages à ajouter ici)*
+👉 https://romain62300.github.io/dice-roller-js/
 
 ## 👤 Auteur
 Romain Monier
