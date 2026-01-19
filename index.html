@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dé virtuel</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Dé virtuel</h1>
+        <p class="subtitle">Choisis ton dé, lance, et récupère le résultat.</p>
+      </header>
+
+      <section class="panel">
+        <div class="row">
+          <label class="label" for="faces">Nombre de faces</label>
+          <select id="faces" class="select">
+            <option value="4">d4</option>
+            <option value="6" selected>d6</option>
+            <option value="8">d8</option>
+            <option value="10">d10</option>
+            <option value="12">d12</option>
+            <option value="20">d20</option>
+            <option value="100">d100</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <button id="rollBtn" class="btn" type="button">Lancer 🎲</button>
+          <button id="resetBtn" class="btn btn--ghost" type="button">Reset</button>
+        </div>
+
+        <div class="result" aria-live="polite">
+          <div class="dice" id="dice" role="img" aria-label="Résultat du dé">—</div>
+          <p class="hint" id="hint">Prêt.</p>
+        </div>
+
+        <div class="history">
+          <h2>Historique</h2>
+          <ol id="historyList" class="history__list"></ol>
+        </div>
+      </section>
+
+      <footer class="app__footer">
+        <small>Projet perso — HTML/CSS/JS</small>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
