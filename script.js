@@ -1,9 +1,13 @@
+
 const facesSelect = document.getElementById("faces");
 const rollBtn = document.getElementById("rollBtn");
 const resetBtn = document.getElementById("resetBtn");
 const diceEl = document.getElementById("dice");
 const hintEl = document.getElementById("hint");
 const historyList = document.getElementById("historyList");
+
+let totalRolls = 0;
+let totalSum = 0;
 
 let isRolling = false;
 
@@ -26,6 +30,9 @@ function resetAll() {
   diceEl.textContent = "—";
   hintEl.textContent = "Prêt.";
   historyList.innerHTML = "";
+
+  totalRolls = 0;
+  totalSum = 0;
 }
 
 function rollDice() {
@@ -46,15 +53,21 @@ function rollDice() {
   const interval = setInterval(() => {
     diceEl.textContent = randomInt(1, faces);
     ticks += 1;
+
     if (ticks >= 12) {
       clearInterval(interval);
 
       const result = randomInt(1, faces);
       diceEl.textContent = result;
 
+      totalRolls++;
+      totalSum += result;
+      const average = (totalSum / totalRolls).toFixed(2);
+
       const label = `d${faces} → ${result}`;
       addHistoryLine(label);
-      hintEl.textContent = "Terminé.";
+
+      hintEl.textContent = `Terminé. Moyenne : ${average}`;
 
       isRolling = false;
       rollBtn.disabled = false;
