@@ -1,54 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dé virtuel</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alakachan Dev | Création de sites web professionnels</title>
+  <meta name="description" content="Alakachan Dev crée des sites web professionnels, clairs et modernes pour indépendants, associations et petites structures.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-  <body>
-    <main class="app">
-      <header class="app__header">
-        <h1>Dé virtuel</h1>
-        <p class="subtitle">Choisis ton dé, lance, et récupère le résultat.</p>
-      </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
 
-      <section class="panel">
-        <div class="row">
-          <label class="label" for="faces">Nombre de faces</label>
-          <select id="faces" class="select">
-            <option value="4">d4</option>
-            <option value="6" selected>d6</option>
-            <option value="8">d8</option>
-            <option value="10">d10</option>
-            <option value="12">d12</option>
-            <option value="20">d20</option>
-            <option value="100">d100</option>
-          </select>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="nav-overlay"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Création de sites web professionnels</p>
+
+          <h1>
+            Un site web clair, professionnel<br>
+            <span class="highlight">qui donne envie de vous faire confiance</span>
+          </h1>
+
+          <p class="hero-text">
+            Je crée des sites simples, modernes et efficaces pour aider les indépendants,
+            associations et petites structures à présenter leur activité sérieusement.
+          </p>
+
+          <div class="hero-actions">
+            <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+            <a href="realisations.html" class="btn btn-secondary">Voir mes réalisations</a>
+          </div>
         </div>
 
-        <div class="row">
-          <button id="rollBtn" class="btn" type="button">Lancer 🎲</button>
-          <button id="resetBtn" class="btn btn--ghost" type="button">Reset</button>
+        <div class="hero-image">
+          <img src="assets/images/romain.jpg" alt="Romain Monier, créateur de sites web professionnels">
+        </div>
+      </div>
+    </section>
+
+    <section class="services-preview">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Mes services</p>
+          <h2>Des prestations concrètes pour votre présence en ligne</h2>
+          <p>
+            Je conçois des sites pensés pour être lisibles, rapides, crédibles et adaptés à vos besoins réels.
+          </p>
         </div>
 
-        <div class="result" aria-live="polite">
-          <div class="dice" id="dice" role="img" aria-label="Résultat du dé">—</div>
-          <p class="hint" id="hint">Prêt.</p>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Création de site vitrine</h3>
+            <p>
+              Un site professionnel pour présenter votre activité, vos services et rassurer vos visiteurs dès les premières secondes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Refonte de site web</h3>
+            <p>
+              Une remise à niveau visuelle et structurelle pour moderniser un site existant et améliorer sa lisibilité.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Maintenance & accompagnement</h3>
+            <p>
+              Corrections, mises à jour et ajustements pour garder un site fiable, propre et agréable à utiliser.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-preview">
+      <div class="container about-preview-inner">
+        <div>
+          <p class="eyebrow">Pourquoi me choisir</p>
+          <h2>Un accompagnement simple, sérieux et humain</h2>
+          <p>
+            Mon objectif n’est pas seulement de créer un site, mais de vous aider à avoir
+            une présence en ligne claire, crédible et adaptée à votre activité.
+          </p>
         </div>
 
-        <div class="history">
-          <h2>Historique</h2>
-          <ol id="historyList" class="history__list"></ol>
-        </div>
-      </section>
+        <ul class="check-list">
+          <li>Design sobre et professionnel</li>
+          <li>Site responsive et lisible sur mobile</li>
+          <li>Échanges simples et suivi sérieux</li>
+          <li>Solution adaptée à vos besoins</li>
+        </ul>
+      </div>
+    </section>
 
-      <footer class="app__footer">
-        <small>Projet perso — HTML/CSS/JS</small>
-      </footer>
-    </main>
+    <section class="cta-section">
+      <div class="container cta-box">
+        <p class="eyebrow">Un projet en tête ?</p>
+        <h2>Parlons de votre futur site web</h2>
+        <p>Je peux vous accompagner de l’idée jusqu’à la mise en ligne.</p>
+        <a href="contact.html" class="btn btn-primary">Me contacter</a>
+      </div>
+    </section>
+  </main>
 
-    <script src="./script.js"></script>
-  </body>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Alakachan Dev</p>
+        <p>Création de sites web professionnels</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+        <a href="politique-cookies.html">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
 </html>
