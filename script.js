@@ -9,6 +9,8 @@ const qtyMinus = document.getElementById('qtyMinus');
 const qtyPlus = document.getElementById('qtyPlus');
 const qtyValue = document.getElementById('qtyValue');
 
+const VALID_FACES = new Set([4, 6, 8, 10, 12, 20, 100]);
+
 let selectedFaces = 6;
 let quantity = 1;
 let isRolling = false;
@@ -22,7 +24,8 @@ diceTypes.addEventListener('click', e => {
   if (!btn) return;
   document.querySelectorAll('.dice-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  selectedFaces = Number(btn.dataset.faces);
+  const parsed = Number(btn.dataset.faces);
+  selectedFaces = VALID_FACES.has(parsed) ? parsed : 6;
   resetStage();
 });
 
@@ -255,6 +258,10 @@ function applyColors() {
   }
 }
 
+function sanitizeColor(val) {
+  return /^#[0-9a-fA-F]{6}$/.test(val) ? val : '#c9a84c';
+}
+
 function isColorDark(hex) {
   const r = parseInt(hex.slice(1,3), 16);
   const g = parseInt(hex.slice(3,5), 16);
@@ -283,8 +290,8 @@ function setupColorPicker(containerId, inputId, colorSetter) {
   });
 }
 
-setupColorPicker('diceColorPresets', 'diceColorCustom', c => { diceColor = c; });
-setupColorPicker('textColorPresets', 'textColorCustom', c => { textColor = c; });
+setupColorPicker('diceColorPresets', 'diceColorCustom', c => { diceColor = sanitizeColor(c); });
+setupColorPicker('textColorPresets', 'textColorCustom', c => { textColor = sanitizeColor(c); });
 
 // Init
 resetStage();
