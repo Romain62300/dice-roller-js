@@ -1,6 +1,6 @@
 # 🎲 Dice Roller – JavaScript
 
-![Security Reviewed](https://img.shields.io/badge/security-reviewed-brightgreen?style=flat-square&logo=shield)
+![Security Reviewed](https://img.shields.io/badge/security%20reviewed-2026--05--18-brightgreen?style=flat-square&logo=shield)
 
 Petit projet personnel réalisé en **HTML, CSS et JavaScript (vanilla)**.
 
