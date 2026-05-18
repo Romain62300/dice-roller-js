@@ -1,5 +1,7 @@
 # 🎲 Dice Roller – JavaScript
 
+![Security Reviewed](https://img.shields.io/badge/security-reviewed-brightgreen?style=flat-square&logo=shield)
+
 Petit projet personnel réalisé en **HTML, CSS et JavaScript (vanilla)**.
 
 Il s’agit d’un lanceur de dés virtuel permettant de choisir le nombre de faces, de lancer le dé et de consulter l’historique des résultats.
